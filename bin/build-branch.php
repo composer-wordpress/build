@@ -3,7 +3,7 @@
 function makeComposerPackage($version, $zipURL)
 {
   return [
-    'name' => 'leocolomb/wordpress',
+    'name' => 'composer-wordpress/no-content',
     'type' => 'wordpress-core',
     'description' => 'WordPress is web software you can use to create a beautiful website or blog.',
     'keywords' => [
