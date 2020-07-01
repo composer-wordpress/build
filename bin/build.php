@@ -63,14 +63,14 @@ if (!chdir($tempfile)) {
     throw new RuntimeException("couldn't switch to $tempfile");
 }
 
-// $githubUser = getenv('GITHUB_USER');
-// if (empty($githubUser)) {
-//     throw new RuntimeException("refusing to proceed with possibly invalid GITHUB USER");
-// }
+$githubUser = getenv('GITHUB_ACTOR');
+if (empty($githubUser)) {
+    throw new RuntimeException("refusing to proceed with possibly invalid GITHUB USER");
+}
 
-// if (!run("git config user.email $githubUser")) {
-//     throw new RuntimeException("could not set git info for $tempfile");
-// }
+if (!run("git config user.email $githubUser")) {
+    throw new RuntimeException("could not set git info for $tempfile");
+}
 
 // Building releases
 foreach ($releases as $version => $url) {
