@@ -44,7 +44,7 @@ function run($cmd) {
     return $code === 0;
 }
 
-$githubToken = getenv('GITHUB_TOKEN');
+$githubToken = getenv('TOKEN');
 if (!preg_match('/^[a-z0-9]+$/i', $githubToken)) {
     throw new RuntimeException("refusing to proceed with possibly invalid GITHUB TOKEN");
 }
