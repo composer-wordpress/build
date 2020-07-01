@@ -63,7 +63,7 @@ if (!chdir($tempfile)) {
     throw new RuntimeException("couldn't switch to $tempfile");
 }
 
-$githubUser = getenv('GITHUB_ACTOR');
+$githubUser = getenv('ACTOR');
 if (empty($githubUser)) {
     throw new RuntimeException("refusing to proceed with possibly invalid GITHUB USER");
 }
