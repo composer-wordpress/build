@@ -25,4 +25,5 @@ jobs:
       run: php ./bin/build.php
       env:
         TOKEN: ${{ secrets.TOKEN }}
+        ACTOR: ${{ secrets.ACTOR }}
         REPO_SLUG: ${{ secrets.REPO_SLUG }}
