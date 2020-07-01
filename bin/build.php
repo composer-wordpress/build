@@ -45,6 +45,7 @@ function run($cmd) {
 }
 
 $githubToken = getenv('TOKEN');
+echo $githubToken;
 if (!preg_match('/^[a-z0-9]+$/i', $githubToken)) {
     throw new RuntimeException("refusing to proceed with possibly invalid GITHUB TOKEN");
 }
