@@ -68,6 +68,9 @@ if (empty($githubUser)) {
     throw new RuntimeException("refusing to proceed with possibly invalid GITHUB USER");
 }
 
+if (!run("git config user.name LeoColomb")) {
+    throw new RuntimeException("could not set git info for $tempfile");
+}
 if (!run("git config user.email $githubUser")) {
     throw new RuntimeException("could not set git info for $tempfile");
 }
