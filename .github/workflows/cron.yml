@@ -38,6 +38,7 @@ jobs:
          head: ${{ secrets.ACTIVE_REF }}
     - run: date > latest
     - run: |
+        git config --local user.name LeoColomb
         git config --local user.email "${{ secrets.ACTOR }}"
         git commit -m "Add changes" -a
     - uses: ad-m/github-push-action@v0.6.0
