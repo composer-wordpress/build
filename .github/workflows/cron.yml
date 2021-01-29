@@ -40,7 +40,8 @@ jobs:
     - run: |
         git config --local user.name LeoColomb
         git config --local user.email "${{ secrets.ACTOR }}"
-        git commit -m "Add changes" -a
+        git add latest
+        git commit -m "Add changes"
     - uses: ad-m/github-push-action@v0.6.0
       with:
         github_token: ${{ secrets.TOKEN }}
