@@ -35,7 +35,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-         head: ${{ secrets.ACTIVE_REF }}
+         ref: ${{ secrets.ACTIVE_REF }}
     - run: date > latest
     - run: |
         git config --local user.name LeoColomb
