@@ -1,0 +1,22 @@
+name: Active
+
+on:
+   schedule:
+     - cron: '0 0 16 * *'
+
+jobs:
+  activity:
+    name: Keep repo active
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - run: date > latest
+    - run: |
+        git config --local user.name LeoColomb
+        git config --local user.email "${{ secrets.ACTOR }}"
+        git add latest
+        git commit -m "Keep repo active"
+    - uses: ad-m/github-push-action@v0.6.0
+      with:
+        github_token: ${{ secrets.TOKEN }}
